@@ -46,7 +46,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: courses; Type: TABLE; Schema: public; Owner: ox1s
+-- Name: courses; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.courses (
@@ -55,10 +55,10 @@ CREATE TABLE public.courses (
 );
 
 
-ALTER TABLE public.courses OWNER TO ox1s;
+ALTER TABLE public.courses OWNER TO postgres;
 
 --
--- Name: courses_course_id_seq; Type: SEQUENCE; Schema: public; Owner: ox1s
+-- Name: courses_course_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.courses_course_id_seq
@@ -70,17 +70,17 @@ CREATE SEQUENCE public.courses_course_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.courses_course_id_seq OWNER TO ox1s;
+ALTER SEQUENCE public.courses_course_id_seq OWNER TO postgres;
 
 --
--- Name: courses_course_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ox1s
+-- Name: courses_course_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.courses_course_id_seq OWNED BY public.courses.course_id;
 
 
 --
--- Name: majors; Type: TABLE; Schema: public; Owner: ox1s
+-- Name: majors; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.majors (
@@ -89,10 +89,10 @@ CREATE TABLE public.majors (
 );
 
 
-ALTER TABLE public.majors OWNER TO ox1s;
+ALTER TABLE public.majors OWNER TO postgres;
 
 --
--- Name: majors_courses; Type: TABLE; Schema: public; Owner: ox1s
+-- Name: majors_courses; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.majors_courses (
@@ -101,10 +101,10 @@ CREATE TABLE public.majors_courses (
 );
 
 
-ALTER TABLE public.majors_courses OWNER TO ox1s;
+ALTER TABLE public.majors_courses OWNER TO postgres;
 
 --
--- Name: majors_major_id_seq; Type: SEQUENCE; Schema: public; Owner: ox1s
+-- Name: majors_major_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.majors_major_id_seq
@@ -116,17 +116,17 @@ CREATE SEQUENCE public.majors_major_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.majors_major_id_seq OWNER TO ox1s;
+ALTER SEQUENCE public.majors_major_id_seq OWNER TO postgres;
 
 --
--- Name: majors_major_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ox1s
+-- Name: majors_major_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.majors_major_id_seq OWNED BY public.majors.major_id;
 
 
 --
--- Name: students; Type: TABLE; Schema: public; Owner: ox1s
+-- Name: students; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.students (
@@ -138,10 +138,10 @@ CREATE TABLE public.students (
 );
 
 
-ALTER TABLE public.students OWNER TO ox1s;
+ALTER TABLE public.students OWNER TO postgres;
 
 --
--- Name: students_student_id_seq; Type: SEQUENCE; Schema: public; Owner: ox1s
+-- Name: students_student_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.students_student_id_seq
@@ -153,38 +153,38 @@ CREATE SEQUENCE public.students_student_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.students_student_id_seq OWNER TO ox1s;
+ALTER SEQUENCE public.students_student_id_seq OWNER TO postgres;
 
 --
--- Name: students_student_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ox1s
+-- Name: students_student_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.students_student_id_seq OWNED BY public.students.student_id;
 
 
 --
--- Name: courses course_id; Type: DEFAULT; Schema: public; Owner: ox1s
+-- Name: courses course_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.courses ALTER COLUMN course_id SET DEFAULT nextval('public.courses_course_id_seq'::regclass);
 
 
 --
--- Name: majors major_id; Type: DEFAULT; Schema: public; Owner: ox1s
+-- Name: majors major_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.majors ALTER COLUMN major_id SET DEFAULT nextval('public.majors_major_id_seq'::regclass);
 
 
 --
--- Name: students student_id; Type: DEFAULT; Schema: public; Owner: ox1s
+-- Name: students student_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.students ALTER COLUMN student_id SET DEFAULT nextval('public.students_student_id_seq'::regclass);
 
 
 --
--- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: ox1s
+-- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.courses VALUES (1, 'Data Structures and Algorithms
@@ -226,7 +226,7 @@ INSERT INTO public.courses VALUES (18, 'Network Security
 
 
 --
--- Data for Name: majors; Type: TABLE DATA; Schema: public; Owner: ox1s
+-- Data for Name: majors; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.majors VALUES (1, 'Database Administration');
@@ -239,7 +239,7 @@ INSERT INTO public.majors VALUES (7, 'System Administration');
 
 
 --
--- Data for Name: majors_courses; Type: TABLE DATA; Schema: public; Owner: ox1s
+-- Data for Name: majors_courses; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.majors_courses VALUES (1, 1);
@@ -270,7 +270,7 @@ INSERT INTO public.majors_courses VALUES (2, 8);
 
 
 --
--- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: ox1s
+-- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.students VALUES (1, 'Rhea', 'Kellems', 1, 2.5);
@@ -305,28 +305,28 @@ INSERT INTO public.students VALUES (29, 'Ana', 'Tupajic', NULL, 3.1);
 
 
 --
--- Name: courses_course_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ox1s
+-- Name: courses_course_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.courses_course_id_seq', 18, true);
 
 
 --
--- Name: majors_major_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ox1s
+-- Name: majors_major_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.majors_major_id_seq', 7, true);
 
 
 --
--- Name: students_student_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ox1s
+-- Name: students_student_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.students_student_id_seq', 29, true);
 
 
 --
--- Name: courses courses_pkey; Type: CONSTRAINT; Schema: public; Owner: ox1s
+-- Name: courses courses_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.courses
@@ -334,7 +334,7 @@ ALTER TABLE ONLY public.courses
 
 
 --
--- Name: majors_courses majors_courses_pkey; Type: CONSTRAINT; Schema: public; Owner: ox1s
+-- Name: majors_courses majors_courses_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.majors_courses
@@ -342,7 +342,7 @@ ALTER TABLE ONLY public.majors_courses
 
 
 --
--- Name: majors majors_pkey; Type: CONSTRAINT; Schema: public; Owner: ox1s
+-- Name: majors majors_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.majors
@@ -350,7 +350,7 @@ ALTER TABLE ONLY public.majors
 
 
 --
--- Name: students students_pkey; Type: CONSTRAINT; Schema: public; Owner: ox1s
+-- Name: students students_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.students
@@ -358,7 +358,7 @@ ALTER TABLE ONLY public.students
 
 
 --
--- Name: majors_courses majors_courses_course_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: ox1s
+-- Name: majors_courses majors_courses_course_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.majors_courses
@@ -366,7 +366,7 @@ ALTER TABLE ONLY public.majors_courses
 
 
 --
--- Name: majors_courses majors_courses_major_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: ox1s
+-- Name: majors_courses majors_courses_major_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.majors_courses
@@ -374,7 +374,7 @@ ALTER TABLE ONLY public.majors_courses
 
 
 --
--- Name: students students_major_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: ox1s
+-- Name: students students_major_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.students
