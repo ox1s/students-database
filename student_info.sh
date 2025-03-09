@@ -4,7 +4,7 @@
 
 echo -e "\n~~ My Computer Science Students ~~\n"
 
-PSQL="psql -X --username=ox1s --dbname=students --no-align --tuples-only -c"
+PSQL="psql -X --username=postgres --dbname=students --no-align --tuples-only -c"
 
 echo -e "First name, last name, and GPA of students with a 4.0 GPA:"
 echo "$($PSQL "select first_name, last_name, gpa from students where gpa=4.0;")"
